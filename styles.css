@@ -287,17 +287,52 @@ h1, h2, h3, .serif {
 .split h2 { font-size: 26px; margin-bottom: 14px; }
 .split p { color: var(--ink-soft); margin-bottom: 28px; }
 
+/* page banner (interior pages) */
+
+.page-banner {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  margin-top: 48px;
+  border: 1px solid var(--line);
+}
+
+@media (max-width: 800px) {
+  .page-banner { height: 200px; margin-top: 32px; }
+}
+
 /* CTA band */
 
 .cta-band {
-  background: var(--surface);
+  position: relative;
+  background: #232622 url("https://images.unsplash.com/photo-1586652495990-ba28dee51af0?w=2000&q=80") center 60% / cover no-repeat;
   border-top: 1px solid var(--line);
   text-align: center;
-  padding: 64px 24px;
+  padding: 80px 24px;
 }
 
-.cta-band h2 { font-size: 24px; margin-bottom: 12px; }
-.cta-band p { color: var(--ink-soft); max-width: 520px; margin: 0 auto 32px; }
+.cta-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 23, 20, 0.58);
+}
+
+.cta-band > * { position: relative; }
+
+.cta-band h2 { font-size: 24px; margin-bottom: 12px; color: #fff; }
+.cta-band p { color: rgba(255, 255, 255, 0.85); max-width: 520px; margin: 0 auto 32px; }
+
+.cta-band .btn.solid {
+  background: #fff;
+  border-color: #fff;
+  color: var(--ink);
+}
+
+.cta-band .btn.solid:hover {
+  background: transparent;
+  color: #fff;
+}
 
 /* ---------- page headers (interior) ---------- */
 
