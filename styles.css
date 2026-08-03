@@ -568,21 +568,33 @@ form textarea { min-height: 140px; resize: vertical; }
 /* ---------- footer ---------- */
 
 .site-footer {
-  background: var(--bg);
+  background: #303030;
   padding: 0 0 48px;
 }
 
-/* decorative treeline / mountain vector above the footer */
+/* decorative treeline / mountain scene flowing into the dark footer */
 .site-footer::before {
   content: "";
   display: block;
-  height: 170px;
-  background: url("footer-scene.svg") center bottom / cover no-repeat;
-  margin-bottom: 44px;
+  height: 240px;
+  background: var(--bg) url("footer-scene.svg") center bottom / cover no-repeat;
+  margin-bottom: 40px;
 }
 
 @media (max-width: 800px) {
-  .site-footer::before { height: 110px; }
+  .site-footer::before { height: 150px; }
+}
+
+.site-footer .wordmark { color: #ffffff; }
+
+.footer-contact a { color: #c7c7c7; }
+
+.footer-nav a { color: #c7c7c7; }
+.footer-nav a:hover { color: #ffffff; }
+
+.footer-meta {
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  color: #9a9a9a;
 }
 
 .site-footer .wrap {
