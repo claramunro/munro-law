@@ -568,9 +568,21 @@ form textarea { min-height: 140px; resize: vertical; }
 /* ---------- footer ---------- */
 
 .site-footer {
-  border-top: 1px solid var(--line);
   background: var(--bg);
-  padding: 48px 0;
+  padding: 0 0 48px;
+}
+
+/* decorative treeline / mountain vector above the footer */
+.site-footer::before {
+  content: "";
+  display: block;
+  height: 170px;
+  background: url("footer-scene.svg") center bottom / cover no-repeat;
+  margin-bottom: 44px;
+}
+
+@media (max-width: 800px) {
+  .site-footer::before { height: 110px; }
 }
 
 .site-footer .wrap {
