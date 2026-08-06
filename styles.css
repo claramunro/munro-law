@@ -93,6 +93,32 @@ h1, h2, h3, .serif {
 .nav a.btn { padding: 10px 20px; color: #ffffff; }
 .nav a.btn:hover { color: #ffffff; }
 
+/* transparent header floating over the hero (home) */
+.site-header.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: transparent;
+  border-bottom: none;
+}
+
+.site-header.overlay .wordmark { color: #ffffff; }
+
+.site-header.overlay .nav a { color: rgba(255, 255, 255, 0.85); }
+.site-header.overlay .nav a:hover,
+.site-header.overlay .nav a.active { color: #ffffff; }
+
+.site-header.overlay .nav a.btn {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: var(--ink);
+}
+.site-header.overlay .nav a.btn:hover { background: #e2e2e2; border-color: #e2e2e2; }
+
+.site-header.overlay .nav-toggle { color: #ffffff; }
+
 /* mobile nav */
 .nav-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--ink); }
 
@@ -110,6 +136,13 @@ h1, h2, h3, .serif {
   }
   .nav.open { display: flex; }
   .nav a { padding: 12px 24px; width: 100%; text-align: center; }
+
+  /* opened mobile menu is a solid panel — restore dark link color under overlay header */
+  .site-header.overlay .nav.open { background: var(--bg); }
+  .site-header.overlay .nav.open a { color: var(--ink-soft); }
+  .site-header.overlay .nav.open a:hover,
+  .site-header.overlay .nav.open a.active { color: var(--ink); }
+  .site-header.overlay .nav.open a.btn { background: #1f1f1f; border-color: #1f1f1f; color: #ffffff; }
 }
 
 /* ---------- buttons ---------- */
@@ -194,7 +227,7 @@ h1, h2, h3, .serif {
 .hero .wrap {
   position: relative;
   z-index: 1;
-  padding-top: 96px;
+  padding-top: 172px;
   padding-bottom: 96px;
   width: 100%;
 }
